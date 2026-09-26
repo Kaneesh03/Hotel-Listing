@@ -1,0 +1,261 @@
+.hotel-list-page {
+  width: 100%;
+}
+
+.section-banner {
+  background-color: #1958a7;
+  color: #ffffff;
+  padding: 16px 20px;
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.section-banner-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-banner-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+  color: #ffffff;
+}
+
+/* ── Main Container (Centered, 1200px max) ── */
+.hotel-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 16px 36px 16px;
+}
+
+/* ── Success Banner ── */
+.success-banner {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  border: 1px solid #c8e6c9;
+  border-radius: 4px;
+  padding: 10px 16px;
+  margin-bottom: 16px;
+  font-size: 0.92rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.success-banner-close {
+  background: none;
+  border: none;
+  color: #2e7d32;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0 4px;
+}
+
+/* ── Error Banner ── */
+.error-banner {
+  background-color: #ffebee;
+  color: #c62828;
+  border: 1px solid #ffcdd2;
+  border-radius: 4px;
+  padding: 10px 16px;
+  margin-bottom: 16px;
+  font-size: 0.92rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.error-banner-close {
+  background: none;
+  border: none;
+  color: #c62828;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0 4px;
+}
+
+
+/* ── Two-Column Layout ── */
+.page-content {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+/* ── LEFT: Narrow Filter Sidebar ── */
+.filter-sidebar {
+  width: 220px;
+  flex-shrink: 0;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  padding: 16px;
+}
+
+.filter-section {
+  padding-bottom: 14px;
+  margin-bottom: 14px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.filter-section:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.filter-section-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #222222;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.filter-group {
+  margin-bottom: 10px;
+}
+
+.filter-group label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #555555;
+  margin-bottom: 4px;
+}
+
+.filter-input {
+  width: 100%;
+  padding: 7px 9px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  font-size: 0.86rem;
+  outline: none;
+  box-sizing: border-box;
+  background-color: #fafafa;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+.filter-input:focus {
+  border-color: #1958a7;
+  background-color: #ffffff;
+}
+
+.price-error {
+  font-size: 0.8rem;
+  color: #d32f2f;
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.filter-button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.btn-filter {
+  width: 100%;
+  background-color: #1958a7;
+  color: #ffffff;
+  border: none;
+  padding: 8px 10px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-filter:hover {
+  background-color: #134685;
+}
+
+.btn-clear {
+  width: 100%;
+  background-color: #ffffff;
+  color: #555555;
+  border: 1px solid #cccccc;
+  padding: 7px 10px;
+  border-radius: 4px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-clear:hover {
+  background-color: #f5f5f5;
+  color: #222222;
+}
+
+.sidebar-guide-text {
+  font-size: 0.78rem;
+  color: #777777;
+  line-height: 1.4;
+}
+
+/* ── RIGHT: Results Area ── */
+.hotel-list-area {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Compact Results Header Bar */
+.results-header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.result-count {
+  font-size: 0.88rem;
+  color: #444444;
+  margin: 0;
+}
+
+.result-count strong {
+  color: #1958a7;
+}
+
+/* Empty State */
+.no-results {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  padding: 40px 24px;
+  text-align: center;
+  color: #666666;
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+}
+
+/* ── Responsive Refinements ── */
+@media (max-width: 768px) {
+  .page-content {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .filter-sidebar {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .filter-button-group {
+    flex-direction: row;
+  }
+
+  .filter-button-group button {
+    flex: 1;
+  }
+}

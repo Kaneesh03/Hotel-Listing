@@ -1,0 +1,5 @@
+.env
+.env.local
+*.backup
+*.sql.bak
+backup_hotel_db.sql

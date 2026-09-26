@@ -1,0 +1,45 @@
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 16px 0 8px 0;
+  flex-wrap: wrap;
+}
+
+/* ── Individual Page Button ── */
+.pagination-btn {
+  background-color: #ffffff;
+  color: #333333;
+  border: 1px solid #cccccc;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  min-width: 36px;
+  transition: all 0.2s ease;
+}
+
+.pagination-btn:hover:not(:disabled) {
+  background-color: #eef4fb;
+  border-color: #1958a7;
+  color: #1958a7;
+}
+
+/* ── Currently Active Page ── */
+.pagination-btn.active {
+  background-color: #1958a7;
+  color: #ffffff;
+  border-color: #1958a7;
+  font-weight: 700;
+  cursor: default;
+}
+
+/* ── Disabled Button (Previous on page 1, Next on last page) ── */
+.pagination-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  background-color: #fafafa;
+  border-color: #e0e0e0;
+}

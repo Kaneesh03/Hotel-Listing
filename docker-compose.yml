@@ -1,0 +1,18 @@
+services:
+  hotel-postgres:
+    image: postgres:16
+    container_name: hotel-postgres
+    restart: unless-stopped
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-hotel_db}
+      POSTGRES_USER: ${POSTGRES_USER:-hotel_admin}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-hotel_secure_password}
+    volumes:
+      - hotel-postgres-data:/var/lib/postgresql/data
+      - ./hotel-backend/database.sql:/docker-entrypoint-initdb.d/database.sql:ro
+
+volumes:
+  hotel-postgres-data:
+    name: hotel-postgres-data

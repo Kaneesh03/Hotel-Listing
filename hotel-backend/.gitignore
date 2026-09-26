@@ -1,0 +1,12 @@
+node_modules/
+.env
+uploads/*
+!uploads/.gitkeep
+!uploads/1790352338274-205543110.webp
+!uploads/1790352723664-379397005.webp
+!uploads/1790352906114-616129924.webp
+!uploads/1790353314674-921876677.webp
+!uploads/1790353390814-165180845.webp
+!uploads/1790353483269-466889822.webp
+backup_hotel_db.sql
+*.sql.bak
