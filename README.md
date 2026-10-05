@@ -24,20 +24,30 @@ A full-stack Hotel Management web application allowing users to view, search, fi
 
 ---
 
+## Prerequisites
+
+- [Node.js](https://nodejs.org/) (v18 or later)
+- [PostgreSQL](https://www.postgresql.org/download/) (v14 or later)
+
+---
+
 ## Getting Started
 
-No personal `.env` file is required for the default local setup. All default connection values (`host: localhost`, `port: 5433`, `user: hotel_admin`, `password: hotel_secure_password`, `database: hotel_db`) are pre-configured. TAEF is completely independent and is NOT required.
+### 1. Database Setup
 
-### 1. Database Setup (Docker PostgreSQL)
-
-Hotel Listing uses a dedicated Docker container named `hotel-postgres` running on host port **5433** (internally mapped to PostgreSQL port `5432`).
-
-1. Ensure Docker Desktop is running.
-2. In the project root, start the PostgreSQL container:
-   ```bash
-   docker compose up -d
+1. Open **pgAdmin** or **psql** and connect to your PostgreSQL server.
+2. Create the database user:
+   ```sql
+   CREATE USER hotel_admin WITH PASSWORD 'hotel_secure_password';
    ```
-   *(This starts `hotel-postgres` on port `5433` with database `hotel_db` and persistent volume `hotel-postgres-data`. On a fresh Docker volume, `hotel-backend/database.sql` automatically creates the `hotel_db` database, `hotels` table, constraints, and seeds the 6 initial hotel records).*
+3. Create the database:
+   ```sql
+   CREATE DATABASE hotel_db OWNER hotel_admin;
+   ```
+4. Run the seed file to create the `hotels` table and insert 12 initial hotel records:
+   ```bash
+   psql -U hotel_admin -d hotel_db -f hotel-backend/database.sql
+   ```
 
 ---
 
@@ -47,14 +57,19 @@ Hotel Listing uses a dedicated Docker container named `hotel-postgres` running o
    ```bash
    cd hotel-backend
    ```
-2. Install dependencies and start the backend:
+2. Install dependencies:
    ```bash
    npm install
+   ```
+3. *(Optional)* Copy `.env.example` to `.env` and adjust values if your PostgreSQL setup differs from the defaults:
+   ```bash
+   cp .env.example .env
+   ```
+4. Start the backend server:
+   ```bash
    npm start
    ```
-3. The backend server will run at: `http://localhost:5000`
-
-*(Optional: To customize ports or credentials, copy `.env.example` to `.env` in `hotel-backend` and root, and adjust as desired).*
+5. The backend server will run at: `http://localhost:5000`
 
 ---
 
@@ -79,6 +94,7 @@ Hotel Listing uses a dedicated Docker container named `hotel-postgres` running o
 |---|---|---|
 | `GET` | `/api/health` | Health check endpoint returning `{ status: "ok" }` |
 | `GET` | `/api/hotels` | List hotels with optional query filters (`title`, `minPrice`, `maxPrice`, `offset`, `limit`) |
+| `GET` | `/api/hotels/:id` | Get a single hotel by ID |
 | `POST` | `/api/hotels` | Create a new hotel with multipart/form-data (including image file upload) |
 | `PUT` | `/api/hotels/:id` | Update hotel fields with optional new image file replacement |
 | `DELETE` | `/api/hotels/:id` | Delete a hotel by ID and remove its local image from disk |
