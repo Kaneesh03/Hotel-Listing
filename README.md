@@ -1,4 +1,4 @@
-# HotelHub — Hotel Management Application
+# Namlatic — Hotel Management Application
 
 A full-stack Hotel Management web application allowing users to view, search, filter, paginate, add, edit, and delete hotel listings with coordinates and interactive maps.
 
